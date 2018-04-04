@@ -1,0 +1,106 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="user" type="com.tongge.ui.login.model.UserBean"/>
+        <variable name="userEvent" type="com.tongge.ui.login.adapter.LoginEventModel"/>
+    </data>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            tools:context="com.tongge.ui.login.views.fragments.LoginFragment">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/login_username_area"
+                android:layout_width="@dimen/dp_250"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_20"
+                android:textColorHint="@color/oldlace"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <EditText
+                    android:id="@+id/login_username_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:theme="@style/LoginEditTextTheme"
+                    android:drawableLeft="@mipmap/left_user"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:textColor="@android:color/white"
+                    android:hint="@string/input_accout"
+                    android:text="@={user.username}"
+                    android:inputType="phone"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/login_pwd_area"
+                android:layout_width="@dimen/dp_250"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_20"
+                android:textColorHint="@color/oldlace"
+                app:layout_constraintEnd_toEndOf="@+id/login_username_area"
+                app:layout_constraintStart_toStartOf="@+id/login_username_area"
+                app:layout_constraintTop_toBottomOf="@+id/login_username_area"
+                >
+                <EditText
+                    android:id="@+id/login_pwd_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@mipmap/left_pwd"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:theme="@style/LoginEditTextTheme"
+                    android:textColor="@android:color/white"
+                    android:hint="@string/input_pwd"
+                    android:text="@={user.password}"
+                    android:inputType="textPassword"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="@dimen/dp_250"
+                android:layout_height="@dimen/dp_60"
+                android:gravity="center"
+                android:background="@drawable/selector_no_back_round_btn"
+                android:text="@string/login"
+                android:theme="@style/NoBackWhiteText"
+                android:onClick="@{userEvent.login}"
+                android:layout_marginTop="@dimen/dp_30"
+                app:layout_constraintEnd_toEndOf="@+id/login_pwd_area"
+                app:layout_constraintStart_toStartOf="@+id/login_pwd_area"
+                app:layout_constraintTop_toBottomOf="@+id/login_pwd_area"/>
+
+            <Button
+                android:id="@+id/go_to_register_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:background="@null"
+                android:text="@string/register"
+                android:theme="@style/NoBackWhiteText"
+                android:onClick="@{()->userEvent.switchPager(0)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <Button
+                android:id="@+id/go_to_find_pwd_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@null"
+                android:text="@string/find_pwd"
+                android:theme="@style/NoBackWhiteText"
+                android:onClick="@{()->userEvent.switchPager(2)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </android.support.constraint.ConstraintLayout>
+</layout>

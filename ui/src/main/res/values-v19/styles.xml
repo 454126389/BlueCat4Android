@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BCAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@drawable/preview_imgs</item>
+        <item name="toolbarStyle">@style/MyToolBarStyle</item>
+        <item name="android:windowAnimationStyle">@style/MyWindowsAnimation</item>
+        <!-- 透明状态栏 -->
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable name="datas" type="com.tongge.ui.base.DefaultItemMoedl"/>
+        <variable name="event" type="com.tongge.ui.base.DefaultItemEvent"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_item_click"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:onClick="@{(view)->event.defaultItemClick(view, datas)}"
+        android:layout_marginTop="@{datas.isGrounpHeader()?@dimen/dp_20:@dimen/dp_5}"
+        android:orientation="horizontal">
+
+        <ImageView
+
+            android:id="@+id/item_left_icon"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:padding="@dimen/dp_6"
+            android:scaleType="fitCenter"
+            android:src="@{datas.leftIcon}"
+            android:visibility="@{datas.isHiddenLeftIcon()?View.GONE:View.VISIBLE}"
+        />
+        <TextView
+            android:id="@+id/item_left_str"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_40"
+            android:layout_weight="1"
+            android:gravity="center_vertical|left"
+            android:text="@{datas.leftStr}"
+            android:textColor="@{datas.leftStrColor}"/>
+        <TextView
+            android:id="@+id/item_right_str"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_40"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right"
+            android:text="@{datas.rightStr}"
+            android:textColor="@{datas.rightStrColor}"
+            android:visibility="@{datas.isHiddenRightStr()?View.GONE:View.VISIBLE}"/>
+        <ImageView
+            android:id="@+id/item_right_icon"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="0"
+            android:scaleType="fitCenter"
+            android:src="@{datas.rightIcon}"
+            android:visibility="@{datas.isHiddenRightIcon()?View.GONE:View.VISIBLE}"/>
+    </LinearLayout>
+</layout>

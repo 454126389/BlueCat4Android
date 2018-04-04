@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BCAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@drawable/preview_imgs</item>
+        <item name="toolbarStyle">@style/MyToolBarStyle</item>
+        <item name="android:windowAnimationStyle">@style/MyWindowsAnimation</item>
+    </style>
+
+    <!-- toolbar style -->
+    <style name="MyToolBarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">@dimen/dp_0</item>
+        <item name="contentInsetStartWithNavigation">@dimen/dp_0</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="buttonGravity">bottom</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="paddingStart">@dimen/dp_0</item>
+        <item name="android:paddingLeft">@dimen/dp_0</item>
+        <item name="android:paddingRight">@dimen/dp_0</item>
+        <item name="android:scaleType">center</item>
+    </style>
+
+    <!-- activity切换动画 -->
+    <style name="MyWindowsAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/accordion_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/accordion_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/accordion_left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/accordion_right_out</item>
+    </style>
+
+    <!-- 背景透明，文字白色，点击后文字半透明 -->
+    <style name="NoBackWhiteText">
+        <item name="android:background">@null</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@drawable/selector_no_back_btn_text</item>
+    </style>
+
+    <!-- 登陆界面的editText -->
+    <style name="LoginEditTextTheme">
+        <item name="android:layout_marginTop">@dimen/dp_20</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:paddingTop">@dimen/dp_2</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@android:color/white</item>
+    </style>
+
+    <style name="BCAppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="BCAppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

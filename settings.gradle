@@ -1,0 +1,5 @@
+include ':bluecat', ':netcore'          //项目工程
+include ':ui'               //UI
+include ':common'           //各种乱七八糟的通用类
+include ':thirdlibs'        //引用的第三方库
+include ':manager'          //各种数据管理

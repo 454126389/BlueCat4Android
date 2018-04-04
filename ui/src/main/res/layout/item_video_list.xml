@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="itemDatas" type="com.tongge.ui.m1_video.model.VideoListModel"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/device_online_status"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:text="●"
+            android:gravity="center"
+            android:textSize="@dimen/sp_30"
+            android:textColor="@{itemDatas.isOnline?@color/lightgreen:@color/darkgray}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/device_info"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:tint="@color/lightgrey"
+            android:padding="@dimen/dp_10"
+            android:onClick="@{itemDatas.gotoDeviceSet}"
+            android:src="@android:drawable/ic_dialog_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/device_name"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center_vertical"
+            android:text="@{itemDatas.name}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/device_online_status"
+            app:layout_constraintEnd_toStartOf="@+id/device_info"
+            />
+
+        <ImageView
+            android:id="@+id/videos_list_item_img"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()->itemDatas.itemClick(context)}"
+            android:scaleType="fitXY"
+            android:src="@mipmap/no_img"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_5"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/device_name"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

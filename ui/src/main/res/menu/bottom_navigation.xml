@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/main_videos"
+          android:icon="@mipmap/video"
+          android:orderInCategory="0"
+          android:title="@string/video"/>
+
+    <item android:id="@+id/main_message"
+          android:icon="@mipmap/message"
+          android:orderInCategory="1"
+          android:title="@string/message"/>
+
+    <item android:id="@+id/main_find"
+          android:icon="@mipmap/find"
+          android:orderInCategory="2"
+          android:title="@string/discover"/>
+
+    <item android:id="@+id/main_me"
+          android:icon="@mipmap/me"
+          android:orderInCategory="3"
+          android:title="@string/me"/>
+</menu>

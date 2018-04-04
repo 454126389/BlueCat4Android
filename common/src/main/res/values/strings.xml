@@ -1,0 +1,4 @@
+<resources>
+    <string name="loading">正在加载...</string>
+    <string name="permmission_tips">权限的缺少，将使app无法使用</string>
+</resources>
